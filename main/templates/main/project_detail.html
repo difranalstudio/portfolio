@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}{{ projeto.titulo }}{% endblock %}
+
+{% block content %}
+<section class="project-detail">
+  <h1>{{ projeto.titulo }}</h1>
+  <p class="project-resumo">{{ projeto.resumo }}</p>
+
+  {% if projeto.imagem %}
+    <img src="{{ projeto.imagem.url }}" alt="{{ projeto.titulo }}">
+  {% endif %}
+
+  <div class="project-content">
+    {{ projeto.descricao|linebreaks }}
+  </div>
+
+  <div class="project-links">
+    {% if projeto.github_url %}
+      <a class="btn ghost" href="{{ projeto.github_url }}" target="_blank">GitHub</a>
+    {% endif %}
+    {% if projeto.demo_url %}
+      <a class="btn primary" href="{{ projeto.demo_url }}" target="_blank">Ver projeto</a>
+    {% endif %}
+  </div>
+
+  <a class="back-link" href="/#projetos">← Voltar para projetos</a>
+</section>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Meu Portfólio{% endblock %}</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=500">
+</head>
+<body>
+
+<header>
+  <nav>
+    <ul class="menu">
+      <li><a href="/#inicio">Página Inicial</a></li>
+      <li><a href="/#projetos">Projetos</a></li>
+      <li><a href="/#competencias">Competências</a></li>
+      <li><a href="/#contato">Contato</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  {% block content %}
+  {% endblock %}
+</main>
+
+</body>
+</html>

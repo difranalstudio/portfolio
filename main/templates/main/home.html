@@ -1,0 +1,197 @@
+{% extends "base.html" %}
+
+{% block title %}Portifólio | Diogo{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<!-- Aqui entra TODO o seu conteúdo atual -->
+<section id="inicio">
+   <div class="hero container">
+    <div class="hero-left">
+      <p class="hero-kicker">Olá,</p>
+      <h1>Eu sou o <span>Diogo</span></h1>
+      <h2 class="hero-sub">Desenvolvedor Python em início de carreira</h2>
+
+      <p class="hero-desc">
+        Sou estudante de Ciência da Computação (último periodo) e venho construindo alguns projetos em python.
+        Aqui você encontra meus trabalhos, competências e como falar comigo.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn primary" href="#contato">Contato</a>
+        <a class="btn ghost" href="#projetos">Ver projetos</a>
+      </div>
+
+      <div class="hero-about">
+        <h3>Sobre mim</h3>
+        <p>
+          Tenho certa experiência em desenvolvimento web, app de celular, app de desktop, análise dados, criação de dashboards, automação, machine learning e LLMs.
+        </p>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="photo-wrap">
+        <img src="{% static 'img/diogo1.png' %}" alt="Foto do Diogo">
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section id="projetos">
+   <h1>Projetos</h1>
+      <p>Aqui estarão alguns dos meus projetos</p>
+      <div class="projects-grid">
+    {% for p in projetos %}
+      <a class="project-card" href="{% url 'projeto_detalhe' p.slug %}">
+        {% if p.imagem %}
+          <img class="project-thumb" src="{{ p.imagem.url }}" alt="{{ p.titulo }}">
+        {% else %}
+          <div class="project-thumb placeholder"></div>
+        {% endif %}
+
+        <div class="project-body">
+          <h3>{{ p.titulo }}</h3>
+          <p>{{ p.resumo }}</p>
+        </div>
+      </a>
+    {% empty %}
+      <p>Ainda não há projetos cadastrados.</p>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="competencias">
+   <h1>Competências</h1>
+        <p>Minhas habilidades adquiridas</p>
+  <div class="skills-categories">
+
+  <!-- BACK-END -->
+  <div class="skills-category">
+    <h2>Back-end</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class= "skill-logo-box">
+          <img src="{% static 'img/skills/python.png' %}" alt="Python">
+        </div>
+        
+        
+      </div>
+      <div class="skill-card">
+        <div class= "skill-logo-box">
+          <img src="{% static 'img/skills/django.png' %}" alt="Django">
+        </div>
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- DADOS -->
+  <div class="skills-category">
+    <h2>Dados & BI</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class= "skill-logo-box">
+          <img src="{% static 'img/skills/pandas.png' %}" alt="Pandas">
+        </div>
+        
+      </div>
+      <div class="skill-card">
+        <div class= "skill-logo-box">
+          <img src="{% static 'img/skills/numpy.png' %}" alt="NumPy">
+        </div>
+        
+        
+      </div>
+      <div class="skill-card">
+        <div class= "skill-logo-box">
+        <img src="{% static 'img/skills/powerbi.png' %}" alt="Power BI">
+      </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- MACHINE LEARNING -->
+  <div class="skills-category">
+    <h2>Machine Learning</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class= "skill-logo-box">
+          <img src="{% static 'img/skills/scikitlearn.png' %}" alt="Scikit-learn">
+        </div>
+        
+       
+      </div>
+      <div class="skill-card">
+        <div class= "skill-logo-box">
+          <img src="{% static 'img/skills/tensorflow.png' %}" alt="TensorFlow">
+        </div>
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- LLMs -->
+  <div class="skills-category">
+    <h2>LLMs & IA Generativa</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class= "skill-logo-box">
+          <img src="{% static 'img/skills/langchain.png' %}" alt="LangChain">
+        </div>
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- RPA -->
+  <div class="skills-category">
+    <h2>RPA & Automação</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class= "skill-logo-box">
+          <img src="{% static 'img/skills/uipath.png' %}" alt="UiPath">
+        </div>
+        
+      
+      </div>
+      <div class="skill-card">
+        <div class= "skill-logo-box">
+          <img src="{% static 'img/skills/selenium.png' %}" alt="Selenium">
+        </div>
+        
+    
+      </div>
+    </div>
+  </div>
+
+  <!-- CLOUD -->
+  <div class="skills-category">
+    <h2>Cloud</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class= "skill-logo-box">
+          <img src="{% static 'img/skills/aws.png' %}" alt="AWS">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section id="contato">
+  <h1>Contato</h1>
+      <p>Email: diogo.alves@estudante.iftm.edu.br</p>
+      <p>Telefone: (34) 999835334</p>
+      <p>LinkedIn | GitHub</p>
+</section>
+
+{% endblock %}
