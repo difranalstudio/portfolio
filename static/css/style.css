@@ -433,3 +433,87 @@ section {
   font-weight: 600;
   color: #222;
 }
+
+/* ===== AJUSTES MOBILE ===== */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --altura-header: auto;
+  }
+
+  body {
+    padding-top: 0;
+  }
+
+  header {
+    position: static;
+    height: auto;
+    padding: 14px 10px;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  section {
+    min-height: auto;
+    padding: 60px 18px;
+    clip-path: none !important;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .hero-right {
+    order: -1;
+    justify-content: center;
+  }
+
+  .photo-wrap {
+    width: min(280px, 85vw);
+  }
+
+  .hero-desc,
+  .hero-about {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+
+  .skill-card,
+  .project-card {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .skill-logo-box {
+    width: 64px;
+    height: 64px;
+  }
+
+  #contato {
+    text-align: center;
+  }
+}
