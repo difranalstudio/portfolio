@@ -513,7 +513,38 @@ body {
     height: 64px;
   }
 
-  #contato {
-    text-align: center;
+  #contato p {
+    margin-bottom: 12px;
+    font-size: 18px;
+  }
+
+  #contato p a {
+    color: #1a1a1a;
+    text-decoration: none;
+    margin-left: 8px;
+  }
+
+  .contact-links {
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .contact-links a {
+    color: #1a1a1a;
+    text-decoration: none;
+  }
+
+  .contact-links a:hover {
+    color: #00bcd4;
+  }
+
+  .separator {
+    opacity: 0.6;
   }
 }
