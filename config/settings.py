@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     "main",
     "cloudinary",
     "cloudinary_storage",
-    "main",
 ]
 
 MIDDLEWARE = [
