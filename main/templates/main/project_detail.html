@@ -12,7 +12,7 @@
   {% endif %}
 
   <div class="project-content">
-    {{ projeto.descricao|linebreaks }}
+    {{ projeto.descricao|safe }}
   </div>
 
   <div class="project-links">
