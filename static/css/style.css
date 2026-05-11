@@ -548,3 +548,8 @@ body {
     opacity: 0.6;
   }
 }
+
+.project-description p {
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
